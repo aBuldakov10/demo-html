@@ -1,0 +1,160 @@
+<!-- Typography -->
+<div>
+  <h1 class="h1">h1 title</h1>
+  <h2 class="h2">h2 title</h2>
+  <h3 class="h3">h3 title</h3>
+  <h4 class="h4">h4 title</h4>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, accusantium aspernatur dolorum esse exercitationem possimus reiciendis suscipit tempora. Aliquid consequuntur doloremque, illum ipsam placeat praesentium quisquam repudiandae vero. Aspernatur, sed.</p>
+  <a href="/" title="link" target="">Link</a>
+  <a href="#" class="btn" title="link-btn" target="">link btn</a>
+</div>
+
+<!-- Images -->
+<div>
+  <h2>Image block</h2>
+  <div class="img-bg">
+    <img src="/img/1.jpg" alt="img"/>
+  </div>
+</div>
+
+<!-- Form -->
+<h2>Form block</h2>
+<form action="" class="form">
+  <!-- Radio -->
+  <div class="form__group">
+    <label class="radio">
+      <input class="radio__input" name="radio-1" type="radio" checked>
+      <span class="radio__name">radio 1</span>
+    </label>
+    
+    <label class="radio">
+      <input class="radio__input" name="radio-1" type="radio">
+      <span class="radio__name">radio 2</span>
+    </label>
+  </div>
+  
+  <!-- Checkbox -->
+  <div class="form__group">
+    <label class="checkbox">
+      <input class="checkbox__input" name="check-1" type="checkbox" checked>
+      <span class="checkbox__name">checkbox 1</span>
+    </label>
+    
+    <label class="checkbox">
+      <input class="checkbox__input" name="check-2" type="checkbox">
+      <span class="checkbox__name">checkbox 2</span>
+    </label>
+  </div>
+  
+  <!-- Input fields -->
+  <div style="margin-bottom: 20px;">
+    <div class="form__group">
+      <label class="form__label">
+        <span class="form__label-name">field name</span>
+        <input class="form__input" name="username" type="text" placeholder="name">
+      </label>
+    </div>
+    
+    <div class="form__group">
+      <label class="form__label">
+        <span class="form__label-name">field pass</span>
+        <input class="form__input" name="password" type="password" placeholder="password">
+      </label>
+    </div>
+  
+    <div class="form__group">
+      <label class="form__label">
+        <span class="form__label-name">field textarea</span>
+        <textarea class="form__textarea" name="message" cols="30" rows="10" placeholder="placeholder"></textarea>
+      </label>
+    </div>
+    
+    <div class="form__group">
+      <div class="form-file">
+        <button class="js-form-file-btn form-file__btn btn">
+          <span class="form-file__title">добавить файл</span>
+        </button>
+        
+        <input class="form-file__input" name="file" type="file" multiple>
+      </div>
+    </div>
+    
+    <div class="form__group">
+      <label class="form-color">
+        <span class="form-color__title">@include('_svg.html', {"svgId": "color-picker"})</span>
+        
+        <input class="form-color__input" name="color" type="color">
+      </label>
+    </div>
+    
+    <div class="form__group">
+      <div class="form-range">
+        <span class="form-range__name">field range</span>
+        <input class="form-range__input" name="range" type="range" min="0" max="100" step="1" value="40">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Buttons -->
+  <div>
+    <button class="btn" type="button">button</button>
+    <button class="btn" type="reset">reset</button>
+    <button class="btn" type="submit">submit</button>
+  </div>
+  
+  <!-- Select list -->
+  <fieldset>
+    <legend>Select list fieldset with legend</legend>
+    
+    <select name="" id="">
+      <option value="0" selected>select item</option>
+      <option value="1">item 1</option>
+      <option value="2">item 2</option>
+      <option value="3">item 3</option>
+      <option value="4">item 4</option>
+    </select>
+  </fieldset>
+</form>
+
+<!-- Accordion -->
+<h2>Accordion block</h2>
+<div class="accordion">
+  <div class="accordion__item">
+    <div class="accordion__title collapse-arrow js-switch">accordion title</div>
+    
+    <div class="accordion__body hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur
+      deleniti deserunt distinctio dolor eaque illo in, laborum quis, quos, temporibus voluptates. Blanditiis, eaque,
+      optio? Consectetur impedit magnam odio quam!
+    </div>
+  </div>
+  
+  <div class="accordion__item">
+    <div class="accordion__title collapse-arrow js-switch">accordion title</div>
+    
+    <div class="accordion__body hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur
+      deleniti deserunt distinctio dolor eaque illo in, laborum quis, quos, temporibus voluptates. Blanditiis, eaque,
+      optio? Consectetur impedit magnam odio quam!
+    </div>
+  </div>
+</div>
+
+<!-- Tabs -->
+<h2>Tabs block</h2>
+<div class="tabs js-tabs">
+  <div class="tabs__navigation">
+    <a href="#tab-content-1" class="tabs__navigation-link active">tab 1</a>
+    <a href="#tab-content-2" class="tabs__navigation-link">tab 2</a>
+  </div>
+  
+  <div class="tabs__content">
+    <div id="tab-content-1" class="tabs__content-item">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Adipisci commodi cupiditate dolore facere iure libero magnam praesentium quia quisquam, repellat sed voluptatem?
+      Consequatur corporis distinctio dolor labore maiores maxime voluptatem.
+    </div>
+    
+    <div id="tab-content-2" class="tabs__content-item hidden">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Aperiam id magni officia optio quasi qui reiciendis saepe sed, similique voluptatem. Blanditiis et maiores minima
+      molestiae non nostrum numquam quis, vitae!
+    </div>
+  </div>
+</div>

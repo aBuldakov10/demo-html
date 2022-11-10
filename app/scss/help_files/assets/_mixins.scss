@@ -1,0 +1,66 @@
+// Centering block
+@mixin centering ($coordinate) {
+  @if $coordinate == 'xy' {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  @if $coordinate == 'x' {
+    transform: translateX(-50%);
+    position: absolute;
+    left: 50%;
+  }
+
+  @if $coordinate == 'y' {
+    transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+  }
+}
+
+// Pseudo elements (:before, :after)
+@mixin pseudo ($content: '', $display: block, $position: absolute) {
+  content: $content;
+  display: $display;
+  position: $position;
+}
+
+// Media queries
+@mixin media ($extremum, $width, $extremum1: '', $width1: '') {
+  // if max-width with default breakpoints
+  @if ($extremum == 'max' and ($width == $xs or
+                               $width == $sm or
+                               $width == $md or
+                               $width == $lg or
+                               $width == $xl or
+                               $width == $xxl)) {
+    $width: $width - 1
+  }
+
+  @if ($extremum1 == 'max' and ($width1 == $xs or
+                                $width1 == $sm or
+                                $width1 == $md or
+                                $width1 == $lg or
+                                $width1 == $xl or
+                                $width1 == $xxl)) {
+    $width1: $width1 - 1
+  }
+
+  // media with custom breakpoints
+  @if $extremum1 != '' and $width1 != '' {
+    @media only screen and ($extremum + '-width': $width + 'px') and ($extremum1 + '-width': $width1 + 'px') {
+      @content
+    }
+  } @else {
+    @media only screen and ($extremum + '-width': $width + 'px') {
+      @content
+    }
+  }
+}
+
+//Font size
+@mixin font-size ($size) {
+  font-size: ($size/$desc-base-font)*1rem;
+}

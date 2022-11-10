@@ -1,0 +1,89 @@
+// Set box-sizing for all elements
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+// Reset body outer spacing
+body {
+  margin: 0;
+}
+
+// Reset outline on focus
+a,
+input,
+button,
+select,
+textarea {
+  outline: none;
+}
+
+// Add cursor for desktop
+button,
+[type="file"],
+[type="color"],
+[type="submit"],
+[type="button"] {
+  @include media(min, $lg) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// Set block behavior for img
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// Lists style
+ul,
+ol,
+dl {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// Form style
+fieldset,
+input[type="radio"],
+input[type="range"],
+input[type="checkbox"] {
+  margin: 0;
+}
+
+label {
+  display: inline-block;
+}
+
+input,
+select,
+button,
+textarea {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+select {
+  background-color: inherit;
+}
+
+textarea {
+  resize: vertical;
+}
+
+sub,
+sup {
+  font-size: .75em;
+}

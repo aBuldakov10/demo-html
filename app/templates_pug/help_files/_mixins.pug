@@ -1,0 +1,25 @@
+//- Mixins
+//- Menu
+//- This mixing called "menu" can accept two or less parameters - "menuName" or/and "menuClassName".
+//- - "menuName" can be found in variables. It's a variable name like headerMenu, sidebarMenu, footerMenu or any
+//-   custom menu which you will create. REQUIRED parameter!!!
+//- - "menuClassName" it's your any class name. Should be in quotes like 'menuClassName' or 'any-class-name'
+//-   Not necessary parameter
+mixin menu (menuName, menuClassName)
+  nav(role="navigation")
+    ul.menu(class=menuClassName)
+      each item in menuName
+        li.menu-item(class=item.subclass)
+          a(href=item.url)= item.title
+          if(item.submenu != undefined)
+            span(class='submenu-icon')
+            ul.submenu.sub-2
+              each sub_item_2 in item.submenu
+                li.menu-item.sub-item-2(class=sub_item_2.subclass)
+                  a(href=sub_item_2.url)= sub_item_2.title
+                  if(sub_item_2.submenu != undefined)
+                    span(class='submenu-icon')
+                    ul.submenu.sub-3
+                      each sub_item_3 in sub_item_2.submenu
+                        li.menu-item.sub-item-3(class=sub_item_3.subclass)
+                          a(href=sub_item_3.url)= sub_item_3.title

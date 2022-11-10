@@ -1,0 +1,125 @@
+// Default layout style. could be removed or changed in further
+// No script message
+.no-script-msg {
+  position: fixed;
+  top: 0;
+  padding: 7px;
+  width: 100%;
+  font-size: 13px;
+  background: #f9e03b;
+  text-align: center;
+}
+
+// Set base font
+html {
+  font-size: $mob-base-font+px;
+
+  @include media(min, $md) {
+    font-size: $tab-base-font+px;
+  }
+
+  @include media(min, $lg) {
+    font-size: $desc-base-font+px;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  font-family: $main-font;
+  line-height: 1.2;
+  color: $text-clr;
+}
+
+main {
+  min-height: calc(100vh - 184px);
+}
+
+// Table
+.table-wrapper {
+  margin: 50px 0;
+  overflow-x: auto;
+
+  table {
+    margin: 0;
+  }
+}
+
+table {
+  margin: 50px auto;
+  min-width: 700px;
+  border-collapse: collapse;
+  border: 1px solid;
+  box-shadow: 0 0 4px 0 #a5a5a5;
+
+  thead {
+    background: #8884cc;
+  }
+
+  tbody {
+    background: #ccc7ef;
+
+    tr {
+      &:nth-child(even) {
+        background: #a8a2d0;
+      }
+    }
+  }
+
+  td,
+  th {
+    padding: 20px;
+    border: 1px solid;
+  }
+}
+
+// Video, google map, iframe
+.video-wrapper,
+.iframe-wrapper,
+.responsive-wrapper {
+  position: relative;
+  padding-top: 50%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
+  height: 50px;
+  color: $btn-txt;
+  background: $btn-clr;
+  border: 0;
+  text-transform: capitalize;
+  transition: $transition;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background: $btn-clr-hover;
+      color: $btn-txt-hover;
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+// Custom general layout style for all pages in project
+.container {
+  max-width: 1295px;
+  padding: 0 20px;
+  margin: 0 auto;
+}

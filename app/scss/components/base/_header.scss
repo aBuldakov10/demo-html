@@ -1,0 +1,44 @@
+// Default header menu style. Can be changed in further
+.header__menu-list {
+  display: flex;
+  padding: 0 15px;
+}
+.header-menu {
+  display: flex;
+  justify-content: center;
+
+  & > .menu-item {
+    margin-bottom: 0;
+    margin-right: 15px;
+    padding-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .sub-3 {
+    left: 200px;
+    top: 0;
+  }
+
+  a {
+    transition: none;
+  }
+}
+
+// Custom header style
+header {
+  padding: 30px 0;
+  text-align: center;
+  color: #d8d8d8;
+  background-color: #1e0148;
+}
+
+.header__item-wrapper {
+  display: flex;
+}
+
+.logo {
+  max-width: 120px;
+}

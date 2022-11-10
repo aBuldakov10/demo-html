@@ -1,0 +1,49 @@
+// Fonts
+// ------- Default font -------
+$sans: 'Helvetica', 'Verdana', 'Arial', sans-serif;
+
+// ------- Custom fonts -------
+$main-font: 'Montserrat', $sans;
+
+// Fonts sizes
+$mob-base-font: 14;
+$tab-base-font: 16;
+$desc-base-font: 18;
+
+// Fonts weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+$black: 900;
+
+// Breakpoints
+$xs: 375;
+$sm: 576;
+$md: 768;
+$lg: 992;
+$xl: 1200;
+$xxl: 1400;
+
+// Colors
+$main-clr: #300175;
+$secondary-clr: #4d0d5a;
+
+$text-clr: #333;
+$text-clr-bg: #eee;
+
+$btn-clr: #222;
+$btn-txt: #eee;
+$btn-clr-hover: #333;
+$btn-txt-hover: #eee;
+
+$border-clr: #ccc;
+$border-clr-focus: #333;
+
+$link-hover-clr: #ff7000;
+$active-clr: #c8cdff;
+
+// Other
+$transition: .2s ease;

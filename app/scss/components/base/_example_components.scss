@@ -1,0 +1,72 @@
+// Accordion
+.accordion {
+  margin: 20px 0;
+  border: 1px solid $border-clr;
+  border-radius: 4px;
+
+  &__item {
+    border-bottom: 1px solid $border-clr;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__body,
+  &__title {
+    padding: 15px;
+  }
+
+  &__title {
+    cursor: pointer;
+
+    &.active {
+      background-color: $active-clr;
+    }
+  }
+
+  &__body {
+    border-top: 1px solid $border-clr;
+  }
+}
+
+.collapse-arrow {
+  position: relative;
+  transition: .2s ease;
+
+  &:after {
+    @include pseudo();
+    top: 17px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid $border-clr;
+    border-bottom: 2px solid $border-clr;
+    transform: rotate(315deg);
+    transition: .2s ease;
+  }
+
+  &.active:after {
+    top: 25px;
+    transform: rotate(135deg);
+  }
+}
+
+// Tabs
+.tabs__navigation {
+  display: flex;
+
+  &-link {
+    padding: 8px 16px;
+    color: inherit;
+
+    &.active {
+      color: $active-clr;
+      border-bottom: 1px solid $active-clr;
+    }
+  }
+}
+
+.tabs__content {
+  padding: 15px;
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<!-- include head meta tags -->
+@include('assets/_head.html', {"title": "Главная"})
+
+<body>
+<!-- include header -->
+@include('assets/_header.html', {})
+
+<div class="container is-sidebar">
+  @include('assets/_sidebar.html', {})
+  
+  <main role="main">
+    <h1>main content</h1>
+  </main>
+</div>
+
+<!-- include footer -->
+@include('assets/_footer.html', {})
+
+<!-- include footer scripts -->
+@include('assets/_footer_scripts.html', {})
+</body>
+</html>

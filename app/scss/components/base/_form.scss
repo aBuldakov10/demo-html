@@ -1,0 +1,215 @@
+// Form style
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__label-name {
+    display: block;
+    margin-bottom: .556em;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid $border-clr;
+    transition: $transition;
+
+    &:focus {
+      border-color: $border-clr-focus;
+    }
+  }
+
+  &__input {
+    height: 50px;
+  }
+
+  &__textarea {
+    min-height: 150px;
+  }
+}
+
+// Custom form radio and checkbox
+.radio,
+.checkbox {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: .556em;
+
+  @include media(min, $lg) {
+    cursor: pointer;
+  }
+
+  &__input {
+    width: 20px;
+    height: 20px;
+    appearance: none;
+    border: 1px solid $border-clr;
+
+    &:checked {
+      border-color: $border-clr-focus;
+    }
+  }
+
+  &__name {
+    padding-left: 10px;
+  }
+}
+
+.radio__input {
+  border-radius: 50%;
+
+  &:checked + .radio__name {
+    &:before {
+      @include pseudo();
+      transform: translateY(-50%);
+      top: 50%;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      background: $border-clr-focus;
+      border-radius: 50%;
+    }
+  }
+}
+
+.checkbox__input:checked + .checkbox__name {
+  &:before {
+    @include pseudo();
+    transform: translateY(-50%) rotate(315deg);
+    top: 42%;
+    left: 3px;
+    width: 14px;
+    height: 6px;
+    border-left: 2px solid $border-clr-focus;
+    border-bottom: 2px solid $border-clr-focus;
+  }
+}
+
+// Custom form file
+.form-file {
+  position: relative;
+
+  &__input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Custom form color
+.form-color {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+
+  &__title {
+    @include centering(xy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: $btn-clr;
+    color: $btn-txt;
+    border-radius: 50%;
+    cursor: pointer;
+
+    & svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &__input {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $border-clr;
+    border-radius: 50%;
+    background: transparent;
+
+    &::-webkit-color-swatch {
+      border: 0;
+      border-radius: 50%;
+    }
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-moz-color-swatch {
+      border-radius: 50%;
+      border: 0;
+    }
+  }
+}
+
+// Custom form range
+.form-range {
+  &__name {
+    display: block;
+    margin-bottom: .556em;
+  }
+
+  &__input {
+    width: 100%;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      margin-top: -10px;
+      width: 25px;
+      height: 25px;
+      border: 3px solid $border-clr;
+      background: $btn-clr;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &::-moz-range-thumb {
+      appearance: none;
+      margin-top: -10px;
+      width: 25px;
+      height: 25px;
+      border: 3px solid $border-clr;
+      background: $btn-clr;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &::-webkit-slider-runnable-track {
+      height: 6px;
+      border-radius: 10px;
+      background-color: $btn-clr;
+    }
+
+    &::-moz-range-track {
+      height: 6px;
+      border-radius: 10px;
+      background-color: $btn-clr;
+    }
+  }
+}
+
+fieldset {
+  border: 1px solid $border-clr;
+}
+
+legend {
+  padding: 0 10px;
+}
+
+select {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid $border-clr;
+}
