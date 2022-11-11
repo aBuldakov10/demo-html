@@ -62,5 +62,5 @@
 
 //Font size
 @mixin font-size ($size) {
-  font-size: ($size/$desc-base-font)*1rem;
+  font-size: ($size/$base-font) * 1rem;
 }

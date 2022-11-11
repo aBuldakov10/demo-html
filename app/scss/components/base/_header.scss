@@ -1,44 +1,159 @@
-// Default header menu style. Can be changed in further
-.header__menu-list {
-  display: flex;
-  padding: 0 15px;
-}
-.header-menu {
-  display: flex;
-  justify-content: center;
+// Custom header style
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1052;
+  width: 100%;
+  padding: 1.25em 0;
+  background: rgba(16, 16, 29, .9);
 
-  & > .menu-item {
-    margin-bottom: 0;
-    margin-right: 15px;
-    padding-right: 15px;
+  @include media(min, $md) {
+    padding-top: 1.875em;
+    padding-bottom: 1.875em;
+  }
 
-    &:last-child {
-      margin-right: 0;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+  &__logo {
+    flex: 0 0 80px;
+    transition: $transition;
+
+    @include media(min, $sm) {
+      flex: 0 0 150px;
     }
   }
 
-  .sub-3 {
-    left: 200px;
-    top: 0;
-  }
-
-  a {
-    transition: none;
+  &__nav {
+    &-burger {
+      @include media(min, $lg) {
+        display: none;
+      }
+    }
   }
 }
 
-// Custom header style
-header {
-  padding: 30px 0;
-  text-align: center;
-  color: #d8d8d8;
-  background-color: #1e0148;
+// Header menu
+.menu {
+  font-weight: 600;
+
+  @include media(max, $md) {
+    top: 65px;
+    width: 100%;
+    height: calc(100vh - 65px);
+  }
+
+  @include media(min, $md, max, $lg) {
+    top: 85px;
+    width: 50%;
+    height: calc(100vh - 85px);
+  }
+
+  @include media(max, $lg) {
+    position: absolute;
+    right: 0;
+    padding: 3.125em 1.875em;
+    background: rgba(16, 16, 29, .9);
+    border-top: 2px solid $txt-clr-bg;
+    overflow-y: auto;
+    transition:  $transition;
+    transform: translateX(100%);
+  }
+
+  @include media(min, $lg) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 20px 40px;
+  }
+
+  @include media(min, $xl) {
+    column-gap: 60px;
+  }
+
+  &__item {
+    @include media(max, $lg) {
+      text-align: center;
+
+      &:not(:last-child) {
+        margin-bottom: 1.563em;
+        padding-bottom: 1.563em;
+        border-bottom: 1px solid $txt-clr-bg;
+      }
+    }
+
+    @include media(min, $lg) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    display: block;
+    color: $txt-clr-bg;
+    text-transform: uppercase;
+  }
 }
 
-.header__item-wrapper {
+// Mobile burger
+.burger span,
+.burger span:before,
+.burger span:after {
+  width: 100%;
+  height: 3px;
+  background: $txt-clr-bg;
+  transition: $transition;
+}
+
+.burger {
+  @include font-size(0);
   display: flex;
+  align-items: center;
+  align-self: center;
+  width: 25px;
+  height: 25px;
+
+  span {
+    position: relative;
+
+    &:after,
+    &:before {
+      @include pseudo();
+    }
+
+    &:before {
+      top: -10px;
+    }
+
+    &:after {
+      bottom: -10px;
+    }
+  }
 }
 
-.logo {
-  max-width: 120px;
+// Menu & burger state
+.is-open-menu {
+  .menu {
+    transform: translateX(0);
+  }
+
+  .burger {
+    span {
+      background: transparent;
+
+      &:before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &:after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
 }

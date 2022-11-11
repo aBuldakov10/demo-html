@@ -6,18 +6,11 @@ $sans: 'Helvetica', 'Verdana', 'Arial', sans-serif;
 $main-font: 'Montserrat', $sans;
 
 // Fonts sizes
-$mob-base-font: 14;
-$tab-base-font: 16;
-$desc-base-font: 18;
+$base-font: 16;
 
 // Fonts weight
-$light: 300;
 $regular: 400;
-$medium: 500;
 $semi-bold: 600;
-$bold: 700;
-$extra-bold: 800;
-$black: 900;
 
 // Breakpoints
 $xs: 375;
@@ -28,21 +21,24 @@ $xl: 1200;
 $xxl: 1400;
 
 // Colors
-$main-clr: #300175;
+$main-clr: #2a75db;
 $secondary-clr: #4d0d5a;
 
-$text-clr: #333;
-$text-clr-bg: #eee;
+$txt-clr: #10101d;
+$txt-clr-bg: #eee;
 
-$btn-clr: #222;
-$btn-txt: #eee;
-$btn-clr-hover: #333;
+$btn-clr: #eee;
+$btn-txt: #10101d;
+$btn-border-clr: #10101d;
+$btn-clr-hover: #2a75db;
 $btn-txt-hover: #eee;
+$btn-border-clr-hover: #eee;
 
 $border-clr: #ccc;
 $border-clr-focus: #333;
 
-$link-hover-clr: #ff7000;
+$link-hover-clr: #2a75db;
+//$link-hover-clr: #ff7000;
 $active-clr: #c8cdff;
 
 // Other

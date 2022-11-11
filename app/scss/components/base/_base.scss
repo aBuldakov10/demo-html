@@ -1,26 +1,18 @@
 // Default layout style. could be removed or changed in further
 // No script message
 .no-script-msg {
+  @include font-size(13);
   position: fixed;
   top: 0;
-  padding: 7px;
+  padding: .438em;
   width: 100%;
-  font-size: 13px;
-  background: #f9e03b;
+  background: $main-clr;
   text-align: center;
 }
 
 // Set base font
 html {
-  font-size: $mob-base-font+px;
-
-  @include media(min, $md) {
-    font-size: $tab-base-font+px;
-  }
-
-  @include media(min, $lg) {
-    font-size: $desc-base-font+px;
-  }
+  font-size: $base-font+px;
 }
 
 body {
@@ -28,48 +20,31 @@ body {
   min-width: 320px;
   font-family: $main-font;
   line-height: 1.2;
-  color: $text-clr;
+  color: $txt-clr;
 }
 
-main {
-  min-height: calc(100vh - 184px);
-}
+.block {
+  &__heading,
+  &__body {
+    margin-bottom: 3.462em;
 
-// Table
-.table-wrapper {
-  margin: 50px 0;
-  overflow-x: auto;
-
-  table {
-    margin: 0;
-  }
-}
-
-table {
-  margin: 50px auto;
-  min-width: 700px;
-  border-collapse: collapse;
-  border: 1px solid;
-  box-shadow: 0 0 4px 0 #a5a5a5;
-
-  thead {
-    background: #8884cc;
-  }
-
-  tbody {
-    background: #ccc7ef;
-
-    tr {
-      &:nth-child(even) {
-        background: #a8a2d0;
-      }
+    @include media(min, $md) {
+      margin-bottom: 6.154em;
     }
   }
 
-  td,
-  th {
-    padding: 20px;
-    border: 1px solid;
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+
+    &--colored span {
+      color: $main-clr;
+    }
   }
 }
 
@@ -93,18 +68,24 @@ table {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 200px;
+  width: 100%;
   height: 50px;
+  font-weight: $semi-bold;
   color: $btn-txt;
   background: $btn-clr;
-  border: 0;
-  text-transform: capitalize;
+  border: 1px solid $btn-border-clr;
+  text-transform: uppercase;
   transition: $transition;
+
+  @include media(min, $sm) {
+    max-width: 200px;
+  }
 
   @media (any-hover: hover) {
     &:hover {
       background: $btn-clr-hover;
       color: $btn-txt-hover;
+      border-color: $btn-border-clr-hover;
     }
   }
 }
@@ -117,9 +98,16 @@ table {
   overflow: hidden;
 }
 
+.is-blur {
+  main,
+  footer {
+    filter: blur(2px);
+  }
+}
+
 // Custom general layout style for all pages in project
 .container {
   max-width: 1295px;
-  padding: 0 20px;
+  padding: 0 1.25em;
   margin: 0 auto;
 }

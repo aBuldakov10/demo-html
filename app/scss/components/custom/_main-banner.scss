@@ -1,0 +1,67 @@
+.banner-section {
+  position: relative;
+  background: url("../img/main-banner-1.jpg") no-repeat top;
+  background-size: cover;
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: 30% 0;
+    color: $txt-clr-bg;
+
+    @include media(min, $sm) {
+      padding: 20% 0;
+    }
+
+    @include media(min, $md) {
+      max-width: 780px;
+    }
+
+    @include media(min, $lg) {
+      padding: 17.3% 0;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+  }
+}
+
+.banner_text {
+  @include font-size(16);
+
+  @include media(min, $md) {
+    @include font-size(20);
+  }
+
+  &__title {
+    margin-bottom: .5em;
+    font-weight: $semi-bold;
+  }
+
+  &__list-item {
+    position: relative;
+    margin-bottom: .25em;
+    padding-left: 25px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 5px;
+      height: 2px;
+      background: $txt-clr-bg;
+
+      @include media(min, $md) {
+        top: 12px;
+      }
+    }
+  }
+}
