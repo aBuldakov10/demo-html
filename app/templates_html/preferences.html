@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<!-- include head meta tags -->
+@include('assets/_head.html', {"title": "Preferences", "style-libs": '<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">'})
+
+<body class="preferences-page">
+<!-- include header -->
+@include('assets/_header.html', {})
+  
+<main role="main">
+  <div class="container">
+    <form class="form" name="preferences">
+      <div class="form__heading">
+        <h1 class="h2 form__title">Preferences</h1>
+        <p>On this page you can configure the main system parameters available for customization</p>
+      </div>
+      
+      <div class="form__body">
+        <!-- Company title -->
+        <div class="form__group">
+          <label class="form__label">
+            <span class="form__label-name">company title</span>
+            <input class="form__input" name="username" type="text" value="" placeholder="Company name" maxlength="20">
+          </label>
+        </div>
+  
+        <!-- First day -->
+        <div class="form__group">
+          <label class="form__label">
+            <span class="form__label-name">first day</span>
+            
+            <span class="select-wrapper">
+                <select id="first-day" class="js-select2" name="firstDay">
+                  <option value="none" selected>-- Choose day --</option>
+                  <option value="sunday">Sunday</option>
+                  <option value="monday">Monday</option>
+                  <option value="system">System</option>
+                </select>
+    
+                <span class="dropDownSelect2"></span>
+              </span>
+          </label>
+        </div>
+  
+        <!-- Container width -->
+        <div class="form__group">
+          <label class="form__label">
+            <span class="form__label-name">container width</span>
+            
+            <span class="select-wrapper">
+              <select id="container-width" class="js-select2" name="containerWidth">
+                <option value="0" selected>-- Choose width --</option>
+                <option value="1024">1024 px</option>
+                <option value="1200">1200 px</option>
+                <option value="1400">1400 px</option>
+              </select>
+              
+              <span class="dropDownSelect2"></span>
+              </span>
+          </label>
+        </div>
+  
+        <!-- Homepage -->
+        <div class="form__group">
+          <label class="form__label">
+            <span class="form__label-name">homepage</span>
+            
+            <span class="select-wrapper">
+                <select id="homepage" class="js-select2" name="homepage">
+                  <option value="none" selected>-- Choose page --</option>
+                  <option value="home">Home</option>
+                  <option value="about">About</option>
+                  <option value="blog">Blog</option>
+                  <option value="contacts">Contacts</option>
+                </select>
+  
+                <span class="dropDownSelect2"></span>
+              </span>
+          </label>
+        </div>
+  
+        <!-- Size -->
+        <div class="form__group">
+          <label class="form__label">
+            <span class="form__label-name">indent size</span>
+            <input class="form__input" name="size" type="text" placeholder="Size" maxlength="10">
+          </label>
+        </div>
+  
+        <!-- Personal code -->
+        <div class="form__group">
+          <div class="form__label personal-code">
+            <span class="form__label-name personal-code__title">personal code</span>
+            
+            <div class="personal-code__content">
+              <div class="personal-code__fields">
+                <input class="form__input" name="firstCodePart" type="text" placeholder="code" maxlength="4">-
+                <input class="form__input" name="secondCodePart" type="text" placeholder="code" maxlength="4">-
+                <input class="form__input" name="thirdCodePart" type="text" placeholder="code" maxlength="4">
+              </div>
+              
+              <span class="personal-code__tooltip">12 digits</span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Theme -->
+        <div class="form__group">
+          <div class="form__label">
+            <span class="form__label-name">theme</span>
+            
+            <div class="radio-wrapper">
+              <label class="radio">
+                <input class="radio__input" name="theme" value="light" type="radio" checked>
+                <span class="radio__name">Light</span>
+              </label>
+              
+              <label class="radio">
+                <input class="radio__input" name="theme" value="dark" type="radio">
+                <span class="radio__name">Dark</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form__footer">
+        <div class="form__submit-wrapper">
+          <button class="btn btn--primary" type="submit">Apply and Save</button>
+          <button class="btn btn--secondary" type="reset">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!-- include footer -->
+@include('assets/_footer.html', {})
+
+<!-- include footer scripts -->
+@include('assets/_footer_scripts.html', {"script-libs": '<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>'})
+</body>
+</html>

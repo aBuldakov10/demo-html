@@ -21,25 +21,54 @@ $xl: 1200;
 $xxl: 1400;
 
 // Colors
-$main-clr: #2a75db;
+// ------- Light theme -------
+:root {
+  --txt-clr-100: #f8f8f8;
+  --txt-clr-300: #887c7c;
+  --txt-clr-800: #0b0a0a;
+
+  --primary-clr-500: #2a75db;
+
+  --secondary-clr-500: #f8f8f8;
+  --secondary-clr-700: #eee;
+
+  --shadow: inset 0 0 0 100px rgba(0, 0, 0, .1);
+}
+
+// ------- Dark theme ---------
+:root[data-theme="dark"] {
+  --txt-clr-100: #1e1d1d;
+  --txt-clr-300: #887c7c;
+  --txt-clr-800: #f3f3f3;
+
+  --primary-clr-500: #ff9000;
+
+  --secondary-clr-500: #424242;
+  --secondary-clr-700: #0c0d0d;
+
+  --shadow: inset 0 0 0 100px rgba(255, 255, 255, .1);
+}
+
+$txt-clr-100: var(--txt-clr-100);
+$txt-clr-300: var(--txt-clr-300);
+$txt-clr-800: var(--txt-clr-800);
+
+$primary-clr-500: var(--primary-clr-500);
+
+$secondary-clr-500: var(--secondary-clr-500);
+$secondary-clr-700: var(--secondary-clr-700);
+
 $secondary-clr: #4d0d5a;
-
-$txt-clr: #10101d;
 $txt-clr-bg: #eee;
-
-$btn-clr: #eee;
-$btn-txt: #10101d;
-$btn-border-clr: #10101d;
-$btn-clr-hover: #2a75db;
-$btn-txt-hover: #eee;
-$btn-border-clr-hover: #eee;
-
 $border-clr: #ccc;
-$border-clr-focus: #333;
-
-$link-hover-clr: #2a75db;
-//$link-hover-clr: #ff7000;
 $active-clr: #c8cdff;
 
 // Other
+:root {
+  --container-width: 1400px;
+}
+
+$container-width: var(--container-width);
+
 $transition: .2s ease;
+$shadow: var(--shadow);

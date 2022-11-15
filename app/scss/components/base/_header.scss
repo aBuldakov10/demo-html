@@ -22,7 +22,7 @@
 
   &__logo {
     flex: 0 0 80px;
-    transition: $transition;
+    transition: none;
 
     @include media(min, $sm) {
       flex: 0 0 150px;

@@ -6,7 +6,7 @@
   top: 0;
   padding: .438em;
   width: 100%;
-  background: $main-clr;
+  background: $primary-clr-500;
   text-align: center;
 }
 
@@ -20,7 +20,8 @@ body {
   min-width: 320px;
   font-family: $main-font;
   line-height: 1.2;
-  color: $txt-clr;
+  color: $txt-clr-800;
+  background-color: $secondary-clr-700;
 }
 
 .block {
@@ -43,7 +44,7 @@ body {
     text-transform: uppercase;
 
     &--colored span {
-      color: $main-clr;
+      color: $primary-clr-500;
     }
   }
 }
@@ -71,9 +72,9 @@ body {
   width: 100%;
   height: 50px;
   font-weight: $semi-bold;
-  color: $btn-txt;
-  background: $btn-clr;
-  border: 1px solid $btn-border-clr;
+  color: $txt-clr-800;
+  background: $txt-clr-100;
+  border: 1px solid $txt-clr-300;
   text-transform: uppercase;
   transition: $transition;
 
@@ -83,9 +84,9 @@ body {
 
   @media (any-hover: hover) {
     &:hover {
-      background: $btn-clr-hover;
-      color: $btn-txt-hover;
-      border-color: $btn-border-clr-hover;
+      background: $primary-clr-500;
+      color: $txt-clr-100;
+      border-color: $primary-clr-500;
     }
   }
 }
@@ -107,7 +108,7 @@ body {
 
 // Custom general layout style for all pages in project
 .container {
-  max-width: 1295px;
+  max-width: $container-width;
   padding: 0 1.25em;
   margin: 0 auto;
 }

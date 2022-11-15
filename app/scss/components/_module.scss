@@ -1,12 +1,12 @@
 // Import base components
-//@import "base/menu-nav"; // Uncomment if need header menu
 @import "base/example_components"; // Use needed example components style and move to _base.scss file
 
 @import "base/base";
+@import "base/select";
 @import "base/form";
 @import "base/header";
-@import "base/sidebar";
 @import "base/footer";
 
 // Import custom components
 @import "custom/main-banner";
+@import "custom/preferences";

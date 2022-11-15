@@ -1,0 +1,56 @@
+.preferences-page {
+  & main {
+    padding-top: 110px;
+
+    & .container {
+      background-color: $txt-clr-100;
+      box-shadow: 0 100px 80px rgba(0, 0, 0, 0.07), 0 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0 20px 13px rgba(0, 0, 0, 0.035), 0 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+    }
+  }
+
+  & .form {
+    padding: 30px 0;
+
+    &__title {
+      margin-bottom: .179em;
+    }
+
+    &__label {
+      width: 100%;
+
+      @include media(min, $sm) {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        max-width: 500px;
+      };
+
+      &-name {
+        display: block;
+        flex: 0 0 32.8%;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  // Other form elements
+  .personal-code {
+    &__fields {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__tooltip {
+      display: inline-block;
+      margin-top: .286em;
+      color: $txt-clr-300;
+    }
+  }
+
+  .form {
+    background: url("../img/preferences-bg.png") no-repeat center;
+    background-size: contain;
+  }
+}
