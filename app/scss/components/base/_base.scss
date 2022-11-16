@@ -120,7 +120,7 @@ body {
 }
 
 section {
-  margin: 3.75em 0;
+  margin: 5.625em 0;
 }
 
 // Accordion
@@ -177,5 +177,82 @@ section {
 
   &.active:after {
     background: $primary-clr-500;
+  }
+}
+
+// Tabs
+.tabs__navigation {
+  display: none;
+
+  @include media(min, $md) {
+    display: flex;
+  }
+
+  &-link {
+    padding: 1.25em 1.563em;
+    color: inherit;
+    border-bottom: 1px solid $primary-clr-500;
+
+    &.active {
+      background-color: $primary-clr-500;
+      color: $txt-clr-100;
+    }
+  }
+}
+
+.tabs__content {
+  @include media(max, $md) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @include media(min, $md) {
+    padding: 1.563em 0;
+  }
+}
+
+.tab {
+  @include media(max, $md) {
+    margin-bottom: 1.25em;
+    padding-bottom: 1.25em;
+    border-bottom: 1px solid $txt-clr-300;
+  }
+
+  @include media(min, $md) {
+    display: none;
+  }
+
+  &.active {
+    display: block;
+  }
+}
+
+.mob-tab {
+  &-nav {
+    @include media(min, $md) {
+      display: none;
+    }
+    @include media(max, $md) {
+      &.active + .mob-tab-content {
+        display: block;
+      }
+    }
+
+    & h3 {
+      margin-bottom: 0;
+      padding-right: 2.2em;
+    }
+
+    &.active {
+      color: $primary-clr-500;
+    }
+  }
+
+  &-content {
+    margin-top: .75em;
+
+    @include media(max, $md) {
+      display: none;
+    }
   }
 }

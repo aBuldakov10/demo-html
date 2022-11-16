@@ -1,0 +1,95 @@
+.tab-section {
+  overflow: hidden;
+}
+
+.tab {
+  &__column {
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+
+    &-item {
+      flex: 1 1 50%;
+    }
+
+    &--reversed {
+      flex-direction: row-reverse;
+
+      & .tab__info .btn {
+        margin-left: auto;
+        display: block;
+      }
+    }
+  }
+
+  &__image {
+    @include media(max, $md) {
+      display: none;
+    }
+
+    & picture {
+      position: relative;
+      display: block;
+      max-width: 85%;
+
+      &:before {
+        content: '';
+        transform: translateX(50px);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -10%;
+        background: $primary-clr-500;
+        z-index: -1;
+
+        @include media(min, $lg) {
+          transform: translateX(150px);
+          width: 100vw;
+          height: 80%;
+        }
+      }
+    }
+  }
+
+  &__image--double {
+    position: relative;
+    padding-right: 9.8%;
+    padding-bottom: 4.9%;
+
+    & picture:first-child {
+      width: 100%;
+      max-width: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        transform: translate(0);
+        z-index: 0;
+      }
+    }
+
+    & picture:last-child {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      border: 3px solid $primary-clr-500;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &__info .btn {
+    margin-top: 1.25em;
+
+    @include media(min, $md) {
+      margin-top: 3.125em;
+    }
+  }
+}

@@ -167,7 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
     switchElement.forEach((item) => {
       item.addEventListener('click', function () {
         $(this).next().slideToggle(200);
-        this.classList.toggle('active');
+
+        setTimeout(() => {
+          this.classList.toggle('active');
+        }, 200);
       });
     });
   }
@@ -176,12 +179,24 @@ document.addEventListener('DOMContentLoaded', () => {
   $('.js-tabs .tabs__navigation-link').on('click', function (e) {
     e.preventDefault();
 
-    let thisAnchor = $(this).attr('href'),
-      thisTarget = $(thisAnchor);
+    const thisAnchor = $(this).attr('href');
+    const thisTarget = $(thisAnchor);
 
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
-    $('.tabs__content-item').hide();
-    thisTarget.show();
+    $('.tab').removeClass('active');
+    thisTarget.addClass('active');
+  });
+
+  window.addEventListener('resize', function () {
+    console.log(window.innerWidth);
+
+    if (window.innerWidth >= 768) {
+      const mobTabContent = document.querySelectorAll('.mob-tab-content');
+
+      mobTabContent.forEach((item) => {
+        item.style.setProperty('display', '');
+      });
+    }
   });
 });
