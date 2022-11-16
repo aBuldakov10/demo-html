@@ -128,8 +128,8 @@
       margin-top: -10px;
       width: 25px;
       height: 25px;
-      border: 3px solid $border-clr;
-      background: $txt-clr-100;
+      border: 3px solid $txt-clr-300;
+      background: $primary-clr-500;
       border-radius: 50%;
       cursor: pointer;
     }
@@ -139,8 +139,8 @@
       margin-top: -10px;
       width: 25px;
       height: 25px;
-      border: 3px solid $border-clr;
-      background: $txt-clr-100;
+      border: 3px solid $txt-clr-300;
+      background: $primary-clr-500;
       border-radius: 50%;
       cursor: pointer;
     }
@@ -148,13 +148,13 @@
     &::-webkit-slider-runnable-track {
       height: 6px;
       border-radius: 10px;
-      background-color: $txt-clr-100;
+      background-color: $border-clr;
     }
 
     &::-moz-range-track {
       height: 6px;
       border-radius: 10px;
-      background-color: $txt-clr-100;
+      background-color: $border-clr;
     }
   }
 }

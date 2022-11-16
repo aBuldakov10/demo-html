@@ -37,6 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /*** Set form range value ***/
+  const rangeElem = document.querySelector('.js-form-range');
+  const rangeElemVal = document.querySelector('.js-form-range-value');
+
+  rangeElemVal.innerHTML = `${rangeElem.value} %`;
+
+  rangeElem.addEventListener('input', function () {
+    rangeElemVal.innerHTML = `${this.value} %`;
+  });
+
   /*** Preferences function ***/
   function setPreferences() {
     const getStoragePreferences = sessionStorage.getItem('preferences');

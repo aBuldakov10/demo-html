@@ -54,3 +54,28 @@
     background-size: contain;
   }
 }
+
+// Range
+.form-range {
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 5px;
+    color: $txt-clr-800;
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__value {
+    min-width: 55px;
+    text-align: right;
+  }
+}
+
+.range-wrapper {
+  display: flex;
+  flex-grow: 1;
+}
