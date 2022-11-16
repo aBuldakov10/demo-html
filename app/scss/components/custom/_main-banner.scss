@@ -1,5 +1,6 @@
 .banner-section {
   position: relative;
+  margin-top: 0;
   background: url("../img/main-banner-1.jpg") no-repeat top;
   background-size: cover;
 
@@ -19,6 +20,21 @@
 
     @include media(min, $lg) {
       padding: 17.3% 0;
+    }
+
+    & .block__heading {
+      text-align: left;
+    }
+
+    & .block__heading,
+    & .block__body {
+      &:not(:last-child) {
+        margin-bottom: 3.462em;
+
+        @include media(min, $md) {
+          margin-bottom: 6.154em;
+        }
+      }
     }
   }
 

@@ -27,11 +27,17 @@ body {
 .block {
   &__heading,
   &__body {
-    margin-bottom: 3.462em;
+    &:not(:last-child) {
+      margin-bottom: 3.462em;
 
-    @include media(min, $md) {
-      margin-bottom: 6.154em;
+      @include media(min, $md) {
+        margin-bottom: 3.750em;
+      }
     }
+  }
+
+  &__heading {
+    text-align: center;
   }
 
   &__footer {
@@ -111,4 +117,65 @@ body {
   max-width: $container-width;
   padding: 0 1.25em;
   margin: 0 auto;
+}
+
+section {
+  margin: 3.75em 0;
+}
+
+// Accordion
+.accordion {
+  &__item {
+    border-bottom: 1px solid $txt-clr-300;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__body,
+  &__title {
+    padding: .938em;
+  }
+
+  &__title {
+    @include font-size(18);
+    cursor: pointer;
+
+    &.active {
+      color: $primary-clr-500;
+    }
+
+    & p {
+      padding-right: 2.5em;
+    }
+  }
+}
+
+.collapse-icon {
+  position: relative;
+  transition: $transition;
+
+  &:after,
+  &:before {
+    content: '';
+    @include centering(y);
+    width: 24px;
+    height: 2px;
+    background: $txt-clr-300;
+    right: 1.125rem;
+    transition: $transition;
+  }
+
+  &:before {
+    transform: rotate(90deg);
+  }
+
+  &.active:before {
+    transform: rotate(180deg);
+  }
+
+  &.active:after {
+    background: $primary-clr-500;
+  }
 }

@@ -161,10 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /*** Accordion ***/
-  $('.js-switch').on('click', function () {
-    $(this).next().slideToggle(200);
-    $(this).toggleClass('active');
-  });
+  const switchElement = document.querySelectorAll('.js-switch');
+
+  if (switchElement) {
+    switchElement.forEach((item) => {
+      item.addEventListener('click', function () {
+        $(this).next().slideToggle(200);
+        this.classList.toggle('active');
+      });
+    });
+  }
 
   /*** Tabs ***/
   $('.js-tabs .tabs__navigation-link').on('click', function (e) {
