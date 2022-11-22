@@ -105,9 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         `.js-like .like__icon[data-slider-id="${key}"]`
       );
 
-      likedBtn.setAttribute('data-is-liked', 'true');
-      likedBtn.nextElementSibling.querySelector('.like__counter').innerHTML =
-        likesObj[key];
+      if (likedBtn) {
+        likedBtn.setAttribute('data-is-liked', 'true');
+        likedBtn.nextElementSibling.querySelector('.like__counter').innerHTML =
+          likesObj[key];
+      }
     });
   }
 
