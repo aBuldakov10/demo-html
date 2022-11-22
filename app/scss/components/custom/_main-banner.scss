@@ -3,6 +3,7 @@
   margin-top: 0;
   background: url("../img/main-banner-1.jpg") no-repeat top;
   background-size: cover;
+  background-attachment: fixed;
 
   &__content {
     position: relative;

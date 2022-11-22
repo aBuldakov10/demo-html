@@ -4,12 +4,15 @@
 @include('assets/_head.html', {"title": "Главная", "style-libs": ""})
 
 <body class="main-page">
-<!-- include header -->
+<!-- Include header -->
 @include('assets/_header.html', {})
 
 <main role="main">
   <!-- Main banner section -->
   @include('assets/_banner.html', {})
+  
+  <!-- Slider section -->
+  @include('assets/_slider_section.html', {})
   
   <!-- Tabs section -->
   @include('assets/_tab_section.html', {})
@@ -18,10 +21,10 @@
   @include('assets/_faq.html', {})
 </main>
 
-<!-- include footer -->
+<!-- Include footer -->
 @include('assets/_footer.html', {})
 
 <!-- include footer scripts -->
-@include('assets/_footer_scripts.html', {'script-libs': ''})
+@include('assets/_footer_scripts.html', {'script-libs': '<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>'})
 </body>
 </html>

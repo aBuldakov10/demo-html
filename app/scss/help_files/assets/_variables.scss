@@ -27,12 +27,15 @@ $xxl: 1400;
   --txt-clr-300: #887c7c;
   --txt-clr-800: #0b0a0a;
 
+  --primary-clr-300: #1689ef;
   --primary-clr-500: #2a75db;
 
   --secondary-clr-500: #f8f8f8;
   --secondary-clr-700: #eee;
 
   --shadow: inset 0 0 0 100px rgba(0, 0, 0, .1);
+  --slider-title-decor: linear-gradient(90deg, rgba(42, 117, 219, .19931722689075626) 0%, rgba(42, 117, 219, 1) 50%, rgba(42, 117, 219, .19931722689075626) 100%);
+  --likes-bg: rgba(42, 117, 219, .1);
 }
 
 // ------- Dark theme ---------
@@ -41,22 +44,29 @@ $xxl: 1400;
   --txt-clr-300: #887c7c;
   --txt-clr-800: #ccc;
 
+  --primary-clr-300: #eba400;
   --primary-clr-500: #ff9000;
 
   --secondary-clr-500: #424242;
   --secondary-clr-700: #0c0d0d;
 
   --shadow: inset 0 0 0 100px rgba(255, 255, 255, .1);
+  --slider-title-decor: linear-gradient(90deg, rgba(255, 114, 0, .19931722689075626) 0%, rgba(255, 114, 0, 1) 50%, rgba(255, 114, 0, .19931722689075626) 100%);
+  --likes-bg: rgba(255, 1147, 0, .1);
 }
 
 $txt-clr-100: var(--txt-clr-100);
 $txt-clr-300: var(--txt-clr-300);
 $txt-clr-800: var(--txt-clr-800);
 
+$primary-clr-300: var(--primary-clr-300);
 $primary-clr-500: var(--primary-clr-500);
 
 $secondary-clr-500: var(--secondary-clr-500);
 $secondary-clr-700: var(--secondary-clr-700);
+
+$slider-title-decor: var(--slider-title-decor);
+$likes-bg: var(--likes-bg);
 
 $secondary-clr: #4d0d5a;
 $txt-clr-bg: #ccc;

@@ -55,22 +55,7 @@ body {
   }
 }
 
-// Video, google map, iframe
-.video-wrapper,
-.iframe-wrapper,
-.responsive-wrapper {
-  position: relative;
-  padding-top: 50%;
-
-  iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-}
-
+// Base button style
 .btn {
   display: inline-flex;
   align-items: center;
@@ -254,5 +239,57 @@ section {
     @include media(max, $md) {
       display: none;
     }
+  }
+}
+
+// Likes block
+.like {
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto .938em;
+    width: 55px;
+    height: 55px;
+    background: rgba(153, 153, 153, .2);
+    backdrop-filter: blur(2px);
+    color: inherit;
+    border: 0;
+    cursor: pointer;
+    transition: $transition;
+
+    @include media(min, $lg) {
+      width: 72px;
+      height: 72px;
+    }
+
+    &:hover {
+      background-color: $likes-bg;
+      color: $primary-clr-300;
+    }
+
+    &:active {
+      background-color: transparent;
+    }
+
+    &[data-is-liked="true"] {
+      pointer-events: none;
+      background-color: $likes-bg;
+      color: $primary-clr-500;
+    }
+  }
+
+  &__content {
+    @include font-size(20);
+    font-style: italic;
+
+    @include media(min, $lg) {
+      @include font-size(32);
+    }
+  }
+
+  &__counter {
+    font-weight: $semi-bold;
+    color: $primary-clr-500;
   }
 }
