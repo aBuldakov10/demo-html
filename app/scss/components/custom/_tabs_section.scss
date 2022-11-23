@@ -27,7 +27,7 @@
       display: none;
     }
 
-    & picture {
+    &-wrapper {
       position: relative;
       display: block;
       max-width: 85%;
@@ -57,7 +57,7 @@
     padding-right: 9.8%;
     padding-bottom: 4.9%;
 
-    & picture:first-child {
+    .tab__image-wrapper:first-child {
       width: 100%;
       max-width: none;
 
@@ -74,7 +74,7 @@
       }
     }
 
-    & picture:last-child {
+    .tab__image-wrapper:last-child {
       position: absolute;
       bottom: 0;
       right: 0;
