@@ -1,8 +1,8 @@
 // Montserrat
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/montserrat/Montserrat-Regular.woff') format('woff'),
-       url('/fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
+  src: url('../fonts/montserrat/Montserrat-Regular.woff') format('woff'),
+       url('../fonts/montserrat/Montserrat-Regular.woff2') format('woff2');
   font-display: swap;
   font-weight: 400;
   font-style: normal;
@@ -10,8 +10,8 @@
 
 @font-face {
   font-family: 'Montserrat';
-  src: url('/fonts/montserrat/Montserrat-SemiBold.woff') format('woff'),
-       url('/fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
+  src: url('../fonts/montserrat/Montserrat-SemiBold.woff') format('woff'),
+       url('../fonts/montserrat/Montserrat-SemiBold.woff2') format('woff2');
   font-display: swap;
   font-weight: 600;
   font-style: normal;
