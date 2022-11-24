@@ -4,4 +4,4 @@
 - Using SCSS preprocessor
 - Slider 'like' option with single click, swipe only on arrow click
 - 'Preferences' page allows change width container and theme
-- 'Pages' renders data from api 
+- 'Pages' renders data from api (page without adaptive)
