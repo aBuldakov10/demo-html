@@ -51,16 +51,18 @@ task('clean-html', function () {
 });
 
 task('compile-html', function () {
-  return src(path.src.html)
-    .pipe(
-      fileinclude({
-        prefix: '@',
-        basepath: '@file',
-      })
-    )
-    .pipe(webpHtml())
-    .pipe(dest(compileDir))
-    .pipe(browserSync.reload({ stream: true }));
+  return (
+    src(path.src.html)
+      .pipe(
+        fileinclude({
+          prefix: '@',
+          basepath: '@file',
+        })
+      )
+      // .pipe(webpHtml())
+      .pipe(dest(compileDir))
+      .pipe(browserSync.reload({ stream: true }))
+  );
 });
 
 task('html', series('clean-html', 'compile-html'));

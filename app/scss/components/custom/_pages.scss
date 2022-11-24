@@ -1,0 +1,92 @@
+.pages-page {
+  padding-top: 120px;
+}
+
+.persons-list {
+  &__item {
+    border: 1px solid $primary-clr-500;
+    padding: 1.25em;
+
+    &:not(:last-child) {
+      margin-bottom: 2.5em;
+    }
+  }
+}
+
+.person {
+  display: flex;
+  gap: 40px;
+
+  &__photo {
+    flex: 1 0 230px;
+    text-align: center;
+
+    &-image {
+      max-width: 230px;
+      overflow: hidden;
+
+      &.is-dead {
+        filter: grayscale(100%);
+
+        & img {
+          opacity: .8;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: 25px;
+          right: -25px;
+          width: 50%;
+          height: 12px;
+          background: #000;
+          transform: rotate(315deg);
+        }
+      }
+    }
+
+    &-status {
+      display: inline-block;
+      margin-top: .938em;
+    }
+  }
+
+  &__info {
+    @include font-size(20);
+    flex: 1 1 100%;
+
+    &-item {
+      display: flex;
+      gap: 15px;
+
+      &:not(:last-child) {
+        margin-bottom: .75em;
+      }
+    }
+
+    h3 {
+      @include font-size(24);
+    }
+
+    &-title {
+      flex: 1 1 15%;
+      font-weight: $semi-bold;
+      text-transform: capitalize;
+    }
+
+    &-description {
+      flex: 1 1 85%;
+    }
+  }
+
+  &-episode-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 15px;
+    text-transform: lowercase;
+
+    & li {
+      margin-bottom: 0;
+    }
+  }
+}

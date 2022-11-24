@@ -324,4 +324,76 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   });
+
+  /*** Fetch api ***/
+  const personsList = document.querySelector('.js-render-persons');
+
+  if (personsList) {
+    const api = 'https://rickandmortyapi.com/api';
+    const fetchCharacter = async () => {
+      const url = `${api}/character`;
+      const data = await fetch(url);
+
+      return await data.json();
+    };
+
+    fetchCharacter().then(({ results }) => {
+      results.forEach(
+        ({ id, image, status, name, gender, location, species, episode }) => {
+          const personsListItem = document.createElement('li');
+          const statusClass = status === 'Dead' ? 'is-dead' : '';
+
+          personsListItem.setAttribute('id', `${id}`);
+          personsListItem.classList.add('persons-list__item', 'person');
+
+          personsListItem.innerHTML = `<div class="person__photo">
+                                      <div class="person__photo-image ${statusClass}">
+                                        <img src="${image}" alt="${name}">
+                                      </div>
+              
+                                      <span class="person__photo-status">Status: ${status}</span>
+                                     </div>
+
+                                     <div class="person__info">
+                                        <h3 class="person__info-item">${name}</h3>
+                                        
+                                        <div class="person__info-item">
+                                          <span class="person__info-title">gender:</span>
+                                          <span class="person__info-description">${gender}</span>
+                                        </div>
+                                        
+                                        <div class="person__info-item">
+                                          <span class="person__info-title">location:</span>
+                                          <span class="person__info-description">${location.name}</span>
+                                        </div>
+                                        
+                                        <div class="person__info-item">
+                                          <span class="person__info-title">species:</span>
+                                          <span class="person__info-description">${species}</span>
+                                        </div>
+                                                  
+                                        <div class="person__info-item">
+                                          <span class="person__info-title">episodes:</span>
+                                          
+                                          <ul class="person__info-description person-episode-list"></ul>
+                                        </div>
+                                     </div>`;
+
+          personsList.append(personsListItem);
+
+          const personEpisodesList =
+            personsListItem.querySelector(`.person-episode-list`);
+
+          episode.forEach((item, index) => {
+            const isComma = index + 1 !== episode.length ? ',' : '';
+            const personEpisodesListItem = document.createElement('li');
+            const episodeNumber = item.split('/').reverse()[0];
+
+            personEpisodesListItem.innerHTML = `Episode ${episodeNumber}${isComma}`;
+            personEpisodesList.append(personEpisodesListItem);
+          });
+        }
+      );
+    });
+  }
 });
