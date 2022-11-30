@@ -2,6 +2,26 @@
   padding-top: 120px;
 }
 
+// Timer
+.timer {
+  @include font-size(42);
+  margin-bottom: .536em;
+  font-weight: $semi-bold;
+  color: $txt-clr-800;
+  text-align: center;
+  letter-spacing: 5px;
+
+  @include media(min, $sm) {
+    letter-spacing: 15px;
+  }
+
+  @include media(min, $lg) {
+    @include font-size(56);
+
+  }
+}
+
+// Api
 .persons-list {
   &__item {
     border: 1px solid $primary-clr-500;

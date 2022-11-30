@@ -216,6 +216,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /*** Timer ***/
+  const timerElement = document.querySelector('.js-timer');
+
+  if (timerElement) {
+    const timerValue = 30;
+    let timerMinutes = timerValue * 60;
+
+    const timer = setInterval(function () {
+      const seconds = timerMinutes % 60;
+      const renderSeconds = seconds < 10 ? `0${seconds}` : seconds;
+
+      const minutes = (timerMinutes / 60) % 60;
+      const renderMinutes =
+        minutes < 10 ? `0${Math.trunc(minutes)}` : `${Math.trunc(minutes)}`;
+
+      if (timerMinutes < 0) {
+        clearInterval(timer);
+      } else {
+        timerElement.innerHTML = `00:${renderMinutes}:${renderSeconds}`;
+      }
+
+      --timerMinutes;
+    }, 1000);
+  }
+
   /*** Mobile menu ***/
   const body = document.querySelector('body');
   const header = document.querySelector('header');
